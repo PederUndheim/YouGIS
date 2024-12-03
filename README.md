@@ -1,104 +1,115 @@
-# **Web GIS Application TBA4251**
+# <img src="./src/assets/YouGis.svg" alt="Tutorial Screenshot" width="150" />
 
-Welcome to the **Web GIS Application**, developed as part of the NTNU 4th year course **TBA4251 "Programming in Geomatics"**. This application is designed for non-professional GIS users with minimal experience in geospatial data analysis, offering an intuitive interface for basic geographic data processing and visualization.
+Welcome to the **YouGIS**, a web GIS application developed as part of the NTNU 4th year course **TBA4251 "Programming in Geomatics"**. This application is designed for non-professional GIS users with minimal experience in geospatial data analysis. By offering an intuitive and visually appealing user interface, the goal is to give beginner a good start to the world of GIS. The application can be used for basic geographic data processing and visualization.
 
-Try it now: [Live Application](https://lauvsnes1.github.io/TBA4251-PiG/)  
-Watch a demo: [YouTube Video](https://youtu.be/xOLmTdqVv5g)
-
----
-
-## **Table of Contents**
-
-1. [Introduction](#introduction)
-2. [Purpose](#purpose)
-3. [Features](#features)
-4. [Usage](#usage)
-5. [Run Locally](#run-locally)
-6. [Tech Stack](#tech-stack)
-7. [Further Development](#further-development)
-8. [Acknowledgments](#acknowledgments)
-
----
-
-## **Introduction**
-
-This application was built to make geographic data analysis accessible and user-friendly. It enables users to perform basic GIS tasks, such as spatial analysis, geoprocessing, and data visualization. The project serves as an introduction to geographic data processing for students and non-professionals.
-
----
-
-## **Purpose**
-
-The application's main goal is to:
-
-- Present geographic data in a straightforward and visually appealing manner.
-- Support simple geospatial analysis for users with little to no GIS experience.
-- Provide an easy-to-follow tutorial so even first-year Geomatics students can use it effectively.
+Click on this link to try the live web application: [YouGIS](https://pederundheim.github.io/YouGIS/)
 
 ---
 
 ## **Features**
 
-- Upload and visualize GeoJSON/JSON files.
+- Upload/draw and visualize GeoJSON/JSON files in different basemaps
 - Perform geoprocessing operations, such as:
-  - **Difference**
+
+  - **Buffer**
   - **Intersect**
   - **Union**
+  - **Difference**
+  - **Dissolve**
+  - **Voronoi-diagrams**
+  - **TIN (Triangular Irregular Network)**
   - **Bounding Box (Bbox)**
   - **Clip**
-  - **Voronoi Diagrams**
-  - **Attribute Filtering**
-- Zoom to any location worldwide, with the map centered on Trondheim, Norway.
-- Integrated step-by-step tutorial accessible via the settings menu.
-- Export processed results as files.
+  - **Attribute Table with filtering on attributes**
+
+- Integrated step-by-step tutorial with provided layer data
+- Export processed results
 
 ---
 
-## **Usage**
+## **Installation**
 
-### **Live Version**
+Access the application by using the live version, or run the project locally at your computer.
 
-Access the application directly in your browser:  
-[https://lauvsnes1.github.io/TBA4251-PiG/](https://lauvsnes1.github.io/TBA4251-PiG/)
+### Live Version
 
-### **Uploading Data**
+Access the application directly in your browser: [https://pederundheim.github.io/YouGIS/](https://pederundheim.github.io/YouGIS/)
 
-1. Drag and drop GeoJSON files into the designated area.
-2. Ensure the file extension is `.json` (rename `.geojson` files if necessary).
-3. Supported coordinate system:
-   - **Projection**: Latitude/Longitude
-   - **Datum**: WGS 84
-   - **EPSG Code**: 4326
-
-### **Tutorial**
-
-- Click the settings icon in the top-right corner.
-- Select "Start Tutorial" to follow an example exercise, such as identifying optimal fishing spots in Trondheimsfjorden.
-
----
-
-## **Run Locally**
+### Run Locally
 
 To run the application locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/yougis.git
+   git clone https://github.com/PederUndheim/YouGIS.git
    cd yougis
    ```
+2. Run this to install required packages:
+   ```bash
+   npm i
+   ```
+3. You must also include a .env-file at the top level in your project where you include your own Mapbox-token in this file:
 
-## **Tech Stack**
+   ```bash
+   VITE_MAPBOX_TOKEN = "your_mapbox_token"
 
-This application leverages the following technologies and libraries:
+   ```
 
-- **Frontend Framework**: React (v18.2.0)
-- **Programming Language**: TypeScript (v4.9.5)
-- **Mapping**: Mapbox-GL (v2.13.0), React-Map-GL (v7.0.21)
-- **Geospatial Analysis**: Turf.js (v6.5.0)
-- **UI Components**: Material-UI, React Joyride (v2.0.5) for tutorials
-- **File Management**: file-saver, jszip
-- **Other Tools**:
-  - [react-toastify](https://fkhadra.github.io/react-toastify) for notifications
-  - [react-color](https://casesandberg.github.io/react-color/) for layer styling
+4. Run to start application at localhost in your browser:
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## **Usage**
+
+### **Tutorial**
+
+- You find a tutorial which through a mission guides you through the important features of this application. This tutorial also provides example data to work with.
+
+  <img src="./src/assets/tutorial.png" alt="Tutorial Screenshot" width="600" />
+
+- Start the tutorial by hovering over the button showed in the image above, and click `Start Tutorial`.
+
+### **Supported data**
+
+If you want to upload other data than the provided in the tutorial, please ensure these requirements for the files.
+
+- File extension is `.json` or `.geojson`
+
+- Coordinate system:
+  - **Projection**: Latitude/Longitude
+  - **Datum**: WGS 84
+  - **EPSG Code**: 4326
+
+---
+
+## Technology Stack
+
+#### Frontend Framework
+
+- **React**: A powerful library for building interactive user interfaces.
+- **MUI (Material-UI)**: Provides a rich library of customizable UI components.
+- **Mapbox GL**: Used for interactive map rendering and geospatial data visualization.
+
+#### Geospatial Processing
+
+- **@turf/turf**: A geospatial analysis library for performing complex GIS operations such as intersections, unions, and spatial queries.
+- **@mapbox/mapbox-gl-draw**: Enables drawing and editing features directly on the map.
+
+#### Utilities and State Management
+
+- **Lodash** and **lodash.debounce**: For utility functions and optimized event handling.
+- **UUID**: For generating unique identifiers.
+- **React-DnD** and **@hello-pangea/dnd**: To implement drag-and-drop interfaces.
+- **@emotion/react** and **@emotion/styled**: For CSS-in-JS styling.
+
+#### Development and Deployment
+
+- **TypeScript**: A strongly-typed language for JavaScript, ensuring type safety and reducing runtime errors.
+- **Vite**: A fast build tool and development server.
+- **gh-pages**: For deploying static files to GitHub Pages.
 
 ---
 
@@ -106,30 +117,27 @@ This application leverages the following technologies and libraries:
 
 This project serves as a foundation for simple GIS tasks but has room for growth:
 
-### **Planned Improvements**
-
-- Styling layers based on properties (categorical/choropleth).
-- Adding 3D support with extrusion layers.
-- Drawing tools for creating new features.
-- Support for more file formats (e.g., shapefiles, CSV).
-- Adding WMS layer integration.
-- Compatibility with additional coordinate systems.
-
 ### **Known Issues**
 
-- Layers sometimes render out of order when multiple are uploaded simultaneously.
-- Input validation needs improvement to handle improper data gracefully.
+- Layers are not always rendering in correct order, based on which is on top of each other in the list.
+- Slow performance on very big files
+
+### **Possible Improvements**
+
+- Seamless layer order-handling that works well
+- Support for more file formats (e.g., GML, SOSI, shapefiles, CSV).
+- Adding WMS layer integration.
+- Compatibility with additional coordinate systems.
+- Possibility to make, save and store projects so one can open them later
 
 ---
 
-## **Acknowledgments**
+## Acknowledgements
 
-This project was made possible through:
+This project is built using a variety of open-source libraries and tools. Special thanks to the following projects and contributors:
 
-- **NTNU Course TBA4251** "Programming in Geomatics".
-- Tools and libraries including:
-  - [Mapbox GL JS](https://www.mapbox.com/mapbox-gl-js/)
-  - [Turf.js](http://turfjs.org/)
-  - [Material-UI](https://mui.com/)
-
-Special thanks to open-source contributors and collaborators who made this application possible.
+- **React**: For providing a dynamic framework for building user interfaces.
+- **Mapbox and Turf.js**: For offering comprehensive geospatial tools and libraries.
+- **MUI**: For a well-structured, consistent UI design system.
+- **TypeScript**: For enhancing code reliability and developer productivity.
+- **Vite**: For its fast and efficient development experience.
