@@ -1,5 +1,5 @@
 import React from "react";
-import { List, ListItem, ListItemText, Box } from "@mui/material";
+import { List, ListItem, ListItemText, Box, Typography } from "@mui/material";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import {
   useLayerActionContext,
@@ -7,6 +7,7 @@ import {
 } from "../../context/LayerContext";
 import { useSelectedLayerContext } from "../../context/LayerContext";
 import LayerListItem from "./LayerListItem";
+import tutorial from "../../assets/find_tutorial.png";
 
 const LayerList: React.FC = () => {
   const { layers } = useLayerDataContext();
@@ -53,18 +54,41 @@ const LayerList: React.FC = () => {
   return (
     <Box p={2} mb={3}>
       {layers.length === 0 ? (
-        <ListItem sx={{ mt: 1 }}>
-          <ListItemText
-            primary="No layers available"
-            primaryTypographyProps={{
-              sx: { paddingBottom: "4px" },
+        <Box>
+          <ListItem sx={{ mt: 1 }}>
+            <ListItemText
+              primary="No layers available"
+              primaryTypographyProps={{
+                sx: { paddingBottom: "4px" },
+              }}
+              secondary="Click on plus-symbol to add layer(s) or start the tutorial to get provided data."
+              secondaryTypographyProps={{
+                style: { color: "#ECAC7A", fontSize: "0.8rem" },
+              }}
+            />
+          </ListItem>
+          <Box
+            sx={{
+              m: 1,
+              mt: 3,
+              p: 2,
+              border: "1.5px dashed #A8D99C",
+              borderRadius: "8px",
+              textAlign: "center",
             }}
-            secondary="Click on plus-symbol to add layer(s)"
-            secondaryTypographyProps={{
-              style: { color: "#ECAC7A", fontSize: "0.8rem" },
-            }}
-          />
-        </ListItem>
+          >
+            <div>
+              <img src={tutorial} style={{ width: "100%", height: "auto" }} />
+            </div>
+            <Typography
+              variant="caption"
+              sx={{ color: "#A8D99C", fontSize: "0.7rem" }}
+            >
+              Start tutorial by hovering over the tutorial icon in the top right
+              corner and click on "Start Tutorial".
+            </Typography>
+          </Box>
+        </Box>
       ) : (
         <DragDropContext onDragEnd={handleOnDragEnd}>
           <Droppable droppableId="droppable">
