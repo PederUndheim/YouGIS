@@ -166,7 +166,7 @@ const AddLayerModal: React.FC<AddLayerModalProps> = ({ open, onClose }) => {
             ),
             disableBeacon: true,
             spotlightClicks: true,
-            placement: "top",
+            placement: "bottom",
           },
         ];
 

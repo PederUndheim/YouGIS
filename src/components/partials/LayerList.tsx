@@ -63,7 +63,11 @@ const LayerList: React.FC = () => {
               }}
               secondary="Click on plus-symbol to add layer(s) or start the tutorial to get provided data."
               secondaryTypographyProps={{
-                style: { color: "#ECAC7A", fontSize: "0.8rem" },
+                style: {
+                  color: "#ECAC7A",
+                  fontSize: "0.8rem",
+                  marginTop: "8px",
+                },
               }}
             />
           </ListItem>

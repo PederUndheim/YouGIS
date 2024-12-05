@@ -3,7 +3,7 @@ import { Modal, Box, IconButton, Typography, Tooltip } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import CancelButton from "../ui/CancelButton";
 import SubmitButton from "../ui/SubmitButton";
-import HelpIcon from "@mui/icons-material/Help";
+import SchoolIcon from "@mui/icons-material/School";
 
 interface ModalContainerProps {
   headerId?: string;
@@ -104,9 +104,17 @@ const ModalContainer: React.FC<ModalContainerProps> = ({
                 aria-label="help"
                 color="inherit"
                 onClick={openTutorial}
-                sx={{ color: "white", fontSize: 25 }}
+                sx={{
+                  width: 30,
+                  height: 30,
+                  color: "white",
+                  border: "1px solid #ccc",
+                  "&:hover": {
+                    border: "1px solid #ECAC7A",
+                  },
+                }}
               >
-                <HelpIcon sx={{ fontSize: 20 }} />
+                <SchoolIcon sx={{ fontSize: 20 }} />
               </IconButton>
             </Tooltip>
           )}

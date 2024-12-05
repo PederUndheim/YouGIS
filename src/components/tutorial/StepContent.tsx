@@ -1,10 +1,10 @@
 // tutorialSteps.ts
 import React from "react";
-import HelpIcon from "@mui/icons-material/Help";
 import yey from "../../assets/tutorial/yey.png";
 import help from "../../assets/tutorial/help.png";
 import clip from "../../assets/tutorial/clip.png";
 import lakes from "../../assets/tutorial/lakes.png";
+import SchoolIcon from "@mui/icons-material/School";
 import buffer from "../../assets/tutorial/buffer.png";
 import gapHook from "../../assets/tutorial/gap_hook.webp";
 import addLayer from "../../assets/tutorial/add_layer.png";
@@ -82,9 +82,9 @@ export const stepContent: TutorialStep[] = [
           <li>
             In many of the steps in this tutorial, a more detailed guide-through
             of the specific task is provided when clicking the{" "}
-            <HelpIcon
+            <SchoolIcon
               sx={{
-                paddingTop: "6px",
+                paddingTop: "3px",
                 marginBottom: "-3px",
                 fontSize: "1.0rem",
               }}
@@ -188,7 +188,7 @@ export const stepContent: TutorialStep[] = [
           <span style={{ fontWeight: "lighter" }}>
             <span style={{ fontWeight: "bold" }}>NB!</span> Remember to look for
             the{" "}
-            <HelpIcon
+            <SchoolIcon
               sx={{
                 paddingTop: "6px",
                 marginBottom: "-3px",
@@ -240,7 +240,7 @@ export const stepContent: TutorialStep[] = [
         <p>
           <span style={{ fontWeight: "lighter" }}>
             Remember the{" "}
-            <HelpIcon
+            <SchoolIcon
               sx={{
                 paddingTop: "6px",
                 marginBottom: "-3px",
@@ -294,7 +294,7 @@ export const stepContent: TutorialStep[] = [
         </div>
         <p>
           Find the{" "}
-          <HelpIcon
+          <SchoolIcon
             sx={{
               paddingTop: "6px",
               marginBottom: "-3px",
@@ -348,7 +348,7 @@ export const stepContent: TutorialStep[] = [
         <p>
           <span style={{ fontWeight: "lighter" }}>
             Find the{" "}
-            <HelpIcon
+            <SchoolIcon
               sx={{
                 paddingTop: "6px",
                 marginBottom: "-3px",
@@ -377,7 +377,7 @@ export const stepContent: TutorialStep[] = [
         <p>
           <span style={{ fontWeight: "lighter" }}>
             Find the{" "}
-            <HelpIcon
+            <SchoolIcon
               sx={{
                 paddingTop: "6px",
                 marginBottom: "-3px",
@@ -408,7 +408,7 @@ export const stepContent: TutorialStep[] = [
           Use the <span style={{ fontWeight: "bold" }}>attribute table</span> to
           create a new layer containing only the lakes. Go back to step 8 and
           find the{" "}
-          <HelpIcon
+          <SchoolIcon
             sx={{
               paddingTop: "3px",
               marginBottom: "-3px",
@@ -504,7 +504,7 @@ export const stepContent: TutorialStep[] = [
         <p>
           <span style={{ fontWeight: "lighter" }}>
             Go back to step 10 and find the{" "}
-            <HelpIcon
+            <SchoolIcon
               sx={{
                 paddingTop: "3px",
                 marginBottom: "-3px",
@@ -538,7 +538,7 @@ export const stepContent: TutorialStep[] = [
         <p>
           <span style={{ fontWeight: "lighter" }}>
             Find the{" "}
-            <HelpIcon
+            <SchoolIcon
               sx={{
                 paddingTop: "6px",
                 marginBottom: "-3px",
@@ -613,7 +613,7 @@ export const stepContent: TutorialStep[] = [
         <p>
           <span style={{ fontWeight: "lighter" }}>
             Find the{" "}
-            <HelpIcon
+            <SchoolIcon
               sx={{
                 paddingTop: "6px",
                 marginBottom: "-3px",
